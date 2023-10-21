@@ -4,9 +4,15 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
-        int shislo_des = x / 10 % 10;
-        System.out.println(shislo_des);
+        Integer b = scanner.nextInt();
+        Integer trith = 0;
+        Integer second = 0;
+        Integer first = 0;
+        first = b / 10 / 10;
+        second = b % 100 / 10;
+        trith = b % 10;
+        Integer res = first + second + trith;
+        System.out.println(res);
     }
 }
 
