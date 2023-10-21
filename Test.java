@@ -5,8 +5,11 @@ public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
-        int res = 1 << a;
-        System.out.println(res);
+        int i = scanner.nextInt();
+        int mask = (1 << i) - 1;
+        int result = a & ~mask;
+
+        System.out.println(result);
     }
 }
 
