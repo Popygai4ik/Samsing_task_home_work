@@ -1,17 +1,16 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        if (0 <= n && n < 10) {
-            System.out.println("DIGIT");
-        } else if (10 <= n && n < 100) {
-            System.out.println("NUM");
-        } else {
-            System.out.println("OTHER");
+        int[] numbers = new int[3];
+        for (int i = 0; i < 3; i++) {
+            numbers[i] = scanner.nextInt();
         }
+        Arrays.sort(numbers);
+        System.out.println(numbers[0] + " " + numbers[1] + " " + numbers[2]);
     }
 }
 
