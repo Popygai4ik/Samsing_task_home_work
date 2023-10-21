@@ -4,15 +4,15 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Integer b = scanner.nextInt();
-        Integer trith = 0;
-        Integer second = 0;
-        Integer first = 0;
-        first = b / 10 / 10;
-        second = b % 100 / 10;
-        trith = b % 10;
-        Integer res = first + second + trith;
-        System.out.println(res);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int kv_a = a * a;
+        int kv_b = b * b;
+//        System.out.println(kv_a);
+//        System.out.println(kv_b);
+        int sum_a_b = kv_a + kv_b;
+//        System.out.println(sum_a_b);
+        System.out.println(sum_a_b);
     }
 }
 
