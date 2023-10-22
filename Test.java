@@ -4,25 +4,27 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n_tortov = scanner.nextInt();
-        String tort;
-        int last = n_tortov % 10;
-        int secons_l = n_tortov % 100;
-        System.out.println(last);
-        System.out.println(secons_l);
+        double A = scanner.nextDouble();
+        double B = scanner.nextDouble();
 
-        if (secons_l >= 11 && secons_l <= 20) {
-            tort = "TORTOV";
-        } else if (last == 1) {
-            tort = "TORT";
-        } else if (last >= 2 && last <= 4) {
-            tort = "TORTA";
+        if ((A == 0&& B > 0)||(-B/A < 0 && A>0 )){
+            System.out.println("any x");
+        } else if ((A == 0 && B != 0)|| (A < 0 && B < 0) ||(A == 0 && B == 0)) {
+            System.out.println("no such x");
         } else {
-            tort = "TORTOV";
+            double x1 = -B / A;
+            String res_x1 = String.format("%.1f", x1);
+//            System.out.println(x1);
+            double m_x1 = -x1;
+            String res_m_x1 = String.format("%.1f", m_x1);
+            if ((A > 0 && 0 > -B/A) || (A > 0 && -B/A > 0)) {
+                System.out.println("x" + "<" + res_m_x1 + " or " +"x>" + res_x1);
+            }
+            if ((A < 0 && 0 < -B/A) || ((A < 0 && -B/A > 0))) {
+                System.out.println(res_m_x1 + "<x<" + res_x1);
+            }
         }
 
-        System.out.println(n_tortov + " " + tort);
-        }
+
     }
-
-
+}
