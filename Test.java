@@ -4,27 +4,35 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        double A = scanner.nextDouble();
-        double B = scanner.nextDouble();
-
-        if ((A == 0&& B > 0)||(-B/A < 0 && A>0 )){
-            System.out.println("any x");
-        } else if ((A == 0 && B != 0)|| (A < 0 && B < 0) ||(A == 0 && B == 0)) {
-            System.out.println("no such x");
-        } else {
-            double x1 = -B / A;
-            String res_x1 = String.format("%.1f", x1);
-//            System.out.println(x1);
-            double m_x1 = -x1;
-            String res_m_x1 = String.format("%.1f", m_x1);
-            if ((A > 0 && 0 > -B/A) || (A > 0 && -B/A > 0)) {
-                System.out.println("x" + "<" + res_m_x1 + " or " +"x>" + res_x1);
-            }
-            if ((A < 0 && 0 < -B/A) || ((A < 0 && -B/A > 0))) {
-                System.out.println(res_m_x1 + "<x<" + res_x1);
+        int n = scanner.nextInt();
+        if (n == 1) {
+            System.out.println(31);
+        } else if (n == 2) {
+            System.out.println(28);
+        } else if (n == 3) {
+            System.out.println(31);
+        } else if (n == 4) {
+            System.out.println(30);
+        } else if (n == 5) {
+            System.out.println(31);
+        } else if (n == 6) {
+            System.out.println(30);
+        } else if (n == 7) {
+            System.out.println(31);
+        } else if (n == 8) {
+            System.out.println(31);
+        } else if (n == 9) {
+            System.out.println(30);
+        } else if (n == 10) {
+            System.out.println(31);
+        } else if (n == 11) {
+            System.out.println(30);
+        } else if (n == 12) {
+            System.out.println(31);
+        } else{
+            System.out.println(0);
             }
         }
 
 
     }
-}
