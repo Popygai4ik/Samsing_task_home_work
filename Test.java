@@ -4,98 +4,46 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int k = scanner.nextInt();
-        int c = 0;
-        int god = 365;
-        if (n == 1) {
-            c = 0;
-            if (k >=1 && k <= 31){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 2) {
-          c = 31;
-            if (k >=1 && k <= 28){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-
-        } else if (n == 3) {
-            c = 59;
-            if (k >=1 && k <= 31){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 4) {
-            c = 90;
-            if (k >=1 && k <= 30){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 5) {
-            c = 120;
-            if (k >=1 && k <= 31){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 6) {
-            c = 151;
-            if (k >=1 && k <= 30){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 7) {
-            c = 181;
-            if (k >=1 && k <= 31){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 8) {
-            c = 212;
-            if (k >=1 && k <= 31){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 9) {
-            c = 243;
-            if (k >=1 && k <= 30){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 10) {
-            c = 273;
-            if (k >=1 && k <= 31){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 11) {
-            c = 304;
-            if (k >=1 && k <= 30){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else if (n == 12) {
-            c = 334;
-            if (k >=1 && k <= 31){
-                System.out.println(god - (c + k));
-            }else {
-                System.out.println(-1);
-            }
-        } else{
-            System.out.println(-1);
-            }
+        int X = scanner.nextInt();
+        StringBuilder res = new StringBuilder();
+        if (X == 100) {
+            res.append("C");
+            X -= 100;
+        }
+        if (X >= 90) {
+            res.append("XC");
+            X -= 90;
+        }
+        if (X >= 50) {
+            res.append("L");
+            X -= 50;
+        }
+        if (X >= 40) {
+            res.append("XL");
+            X -= 40;
+        }
+        while (X >= 10) {
+            res.append("X");
+            X -= 10;
+        }
+        if (X >= 9) {
+            res.append("IX");
+            X -= 9;
+        }
+        if (X >= 5) {
+            res.append("V");
+            X -= 5;
+        }
+        if (X >= 4) {
+            res.append("IV");
+            X -= 4;
+        }
+        while (X >= 1) {
+            res.append("I");
+            X -= 1;
+        }
+        String res_str = res.toString();
+        System.out.println(res_str);
         }
 
 
