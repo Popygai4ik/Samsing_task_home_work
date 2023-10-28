@@ -4,12 +4,21 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int shislo = scanner.nextInt();
-        int shetchik = 1;
-        while (shislo >= 0) {
-            shetchik++;
+        int resultsti = 0;
+        int shislo = 0;
+
+        while (true) {
             shislo = scanner.nextInt();
+            if (shislo % 5 == 0) {
+                if (shislo > 10) {
+                    resultsti += shislo;
+                    }
+                break;
+            } else if (shislo > 10) {
+                resultsti += shislo;
+            }
         }
-        System.out.println(shetchik);
+        System.out.println(resultsti);
+        }
     }
-}
+
