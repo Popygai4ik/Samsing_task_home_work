@@ -6,30 +6,29 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
-        int M = scanner.nextInt();
-        int[][] matrix_do = new int[N][M];
-
-        // Чтение матрицы
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                matrix_do[i][j] = scanner.nextInt();
+        int n = scanner.nextInt();
+        int[][] matrix = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = scanner.nextInt();
             }
         }
-
-        int[][] matrix_posle = new int[M][N];
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                matrix_posle[i][j] = matrix_do[N - j - 1][i];
+        boolean flag = true;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (matrix[i][j] != matrix[j][i]) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (!flag) {
+                break;
             }
         }
-
-        System.out.println(M + " " + N);
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.print(matrix_posle[i][j] + " ");
-            }
-            System.out.println();
+        if (flag) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
         }
 
     }}
