@@ -5,31 +5,37 @@ import static java.util.Collections.min;
 public class Test {
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int[][] matrix = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                matrix[i][j] = scanner.nextInt();
-            }
-        }
-        boolean flag = true;
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (matrix[i][j] != matrix[j][i]) {
-                    flag = false;
-                    break;
+        int N = scanner.nextInt();
+        int M = scanner.nextInt();
+
+        int[][] matrix = new int[N][M];
+
+        int znasheni_shetshik = 0;
+        int polosa = 1;
+
+        for (int i = 0; i < N; i++) {
+            if (polosa == 1) {
+                for (int j = 0; j < M; j++) {
+                    matrix[i][j] = znasheni_shetshik;
+                    znasheni_shetshik++;
                 }
-            }
-            if (!flag) {
-                break;
+                polosa = -1;
+            } else {
+                for (int j = M - 1; j >= 0; j--) {
+                    matrix[i][j] = znasheni_shetshik;
+                    znasheni_shetshik++;
+                }
+                polosa = 1;
             }
         }
-        if (flag) {
-            System.out.println("yes");
-        } else {
-            System.out.println("no");
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                System.out.printf("%3d", matrix[i][j]);
+            }
+            System.out.println();
         }
+    }
 
-    }}
-
+}
