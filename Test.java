@@ -6,17 +6,20 @@ public class Test {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        boolean flag = false;
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) {
-                flag = true;
-                break;
-            }
+        double a = scanner.nextDouble();
+        long n = scanner.nextLong();
+        double result = vozvedeni_v_stepen(a, n);
+        System.out.println(result);
+    }
+
+    public static double vozvedeni_v_stepen(double a, long n) {
+        if (n == 0) {
+            return 1.0;
         }
-        if (flag) {
-            System.out.println("composite");
+        if (n % 2 == 0) {
+            double v = vozvedeni_v_stepen(a, n / 2);
+            return v * v;
         } else {
-            System.out.println("prime");
+            return a * vozvedeni_v_stepen(a, n - 1);
         }
 }}
