@@ -5,18 +5,31 @@ import static java.util.Collections.min;
 public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int A = scanner.nextInt();
-        int B = scanner.nextInt();
-        int result = 0;
-        int shetshik = 0;
-        while (shetshik != Math.abs(B)) {
-            result = result + Math.abs(A);
-            shetshik++;
+        int number = scanner.nextInt();
+        String dvoishnoe = Integer.toBinaryString(number);
+        String vosmerishmoe = Integer.toOctalString(number);
+        String shesnad = Integer.toHexString(number);
+
+        System.out.println(dvoishnoe);
+        System.out.println(vosmerishmoe);
+        System.out.println(shesnad);
+
+        int min_b = Byte.MIN_VALUE;
+        int max_b = Byte.MAX_VALUE;
+//        System.out.println(min_b + " " + max_b);
+        if (number >= min_b && number <= max_b) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
         }
-        if (B < 0 && A > 0) {
-            result = -result;
-        } else if (B > 0 && A < 0){
-            result = -result;
+
+        int min_s = Short.MIN_VALUE;
+        int max_s = Short.MAX_VALUE;
+//        System.out.println(min_s + " " + max_s);
+        if (number >= min_s && number <= max_s) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
         }
-        System.out.println(result);
-}}
+
+    }}
